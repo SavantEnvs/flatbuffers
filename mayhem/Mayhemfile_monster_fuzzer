@@ -1,0 +1,11 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: monster_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/monster_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/monster_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/tests/fuzzer/monster_fuzzer.dict
+    timeout: 5

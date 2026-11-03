@@ -1,0 +1,11 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: parser_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/parser_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/parser_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/tests/fuzzer/parser_fuzzer.dict
+    timeout: 5

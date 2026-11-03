@@ -1,0 +1,29 @@
+# Prune the build context. Kept: .git (the grader needs full history), include/, src/, tests/, grpc/,
+# CMake/, CMakeLists.txt, samples/, reflection/, goldens/, mayhem/ - everything mayhem/build.sh and
+# mayhem/test.sh read.
+docs
+android
+bazel
+.bazelci
+benchmarks
+dart
+examples
+go
+java
+js
+kotlin
+lobster
+lua
+mjs
+net
+nim
+php
+python
+rust
+scripts
+snap
+swift
+ts
+**/*.md
+node_modules
+mayhem/build-*

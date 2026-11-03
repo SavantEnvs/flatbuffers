@@ -1,0 +1,11 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: scalar_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/scalar_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/scalar_fuzzer
+    libfuzzer: true
+    dictionary: /mayhem/tests/fuzzer/scalar_fuzzer.dict
+    timeout: 5
