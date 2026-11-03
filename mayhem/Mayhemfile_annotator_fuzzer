@@ -1,0 +1,10 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: annotator_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/annotator_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/annotator_fuzzer
+    libfuzzer: true
+    timeout: 5
