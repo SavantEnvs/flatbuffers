@@ -1,0 +1,10 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: bfbs_fuzzer-mined-21b706b
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/bfbs_fuzzer-mined-21b706b/testsuite
+cmds:
+  - cmd: /mayhem/bfbs_fuzzer
+    libfuzzer: true
+    timeout: 5
