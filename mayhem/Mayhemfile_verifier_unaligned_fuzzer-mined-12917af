@@ -1,0 +1,10 @@
+image: $MAYHEM_DOCKER_REGISTRY/savantenvs/flatbuffers:latest
+project: savantenvs/flatbuffers
+target: verifier_unaligned_fuzzer-mined-12917af
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/verifier_unaligned_fuzzer-mined-12917af/testsuite
+cmds:
+  - cmd: /mayhem/verifier_unaligned_fuzzer
+    libfuzzer: true
+    timeout: 5
